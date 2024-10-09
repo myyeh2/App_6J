@@ -1,4 +1,5 @@
 ﻿// J. L. Humar,"Dynamics of Structures"，第502-504頁
+
 using System;
 using Matrix_0; 
 
@@ -47,20 +48,20 @@ namespace ConsoleApp6J
 
         Hexp = new CxToHexp(D, Q, t);
         MatTemp = Hexp.GetCxMatrix;
-        ReMatrix yh_Re = (ReMatrix)(MatTemp * d); 
-        ReMatrix yhDot_Re = A * yh_Re;
+        ReMatrix yh = (ReMatrix)(MatTemp * d); 
+        ReMatrix yhDot = A * yh;
 
         Acc.Matrix[i, 0] = t;
-        Acc.Matrix[i, 1] = yhDot_Re.Matrix[0, 0];
-        Acc.Matrix[i, 2] = yhDot_Re.Matrix[1, 0];
+        Acc.Matrix[i, 1] = yhDot.Matrix[0, 0];
+        Acc.Matrix[i, 2] = yhDot.Matrix[1, 0];
 
         Vel.Matrix[i, 0] = t;
-        Vel.Matrix[i, 1] = yh_Re.Matrix[0, 0];
-        Vel.Matrix[i, 2] = yh_Re.Matrix[1, 0];
+        Vel.Matrix[i, 1] = yh.Matrix[0, 0];
+        Vel.Matrix[i, 2] = yh.Matrix[1, 0];
 
         Disp.Matrix[i, 0] = t;
-        Disp.Matrix[i, 1] = yh_Re.Matrix[2, 0];
-        Disp.Matrix[i, 2] = yh_Re.Matrix[3, 0];
+        Disp.Matrix[i, 1] = yh.Matrix[2, 0];
+        Disp.Matrix[i, 2] = yh.Matrix[3, 0];
     }
 
     // 列印標題。   
